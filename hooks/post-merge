@@ -1,0 +1,17 @@
+#!/bin/bash
+
+SCRIPT_FILE="$0"
+
+if [ -L "$0" ]; then
+    SCRIPT_FILE=$(realpath "$0")
+fi
+
+SCRIPT_PATH=$(dirname "$SCRIPT_FILE")
+cd $SCRIPT_PATH
+
+echo "********************************"
+echo "          POST MERGE"
+echo "********************************"
+
+echo "UPDATING HOOKS"
+../install-hooks.sh
